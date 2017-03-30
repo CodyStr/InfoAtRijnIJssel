@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Info@Rijnijssel</title>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+	</head>
+
+	<body>
+		
+		<div class="banner">
+			<img src="banner1.JPG" alt="banner" height="200" width="1600">
+		</div>
+
+		<div class="side">
+			<!--Deze class is voor de achtergrond bij het menu-->
+		</div>
+        
+        <div class="navbar">
+			<img src="logo_rijnijssel.png" alt="RijnIJssel logo">
+            <nav class="main-nav">
+				<ul class="main-nav-ul">
+					<li><a href="Home.html">Home</a></li>
+					<li><a href="#">Opleiding</a>
+						<ul>
+							<li><a href="Boekenlijst.html">Boekenlijst</a></li>
+							<li><a href="http://www.rijnijssel.nl/Codefest" target="_blank">CodeFest</a></li>
+							<li><a href="Faciliteiten.html">Faciliteiten</a></li>
+							<li><a href="Regels.html">Regels</a></li>
+							<li><a href="Rooster.html">Rooster</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="Locaties.html">Locaties</a></li>
+					<li><a href="Docenten.html">Docenten</a></li>
+					<li><a href="FAQ.html">FAQ</a></li>
+					<li><a href="Contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="copyright">
+				<p>&copy; Rijnijssel</p>
+			</div>
+			
+        </div>
+        
+        <div class="main">
+            <!--Deze class is voor de achtergrond voor de main-content-->
+        </div>
+	
+		<div id="main-content-faq">
+			<h1>FAQ</h1>
+			<h3>Q: Waar kan ik mijn rooster vinden?</h3>
+		<div>
+				<p>A: Het rooster kan je in de menu balk onder het kopje rooster vinden. Ook kan je jouw lesrooster op N@tschool, de elektronische leeromgeving (ELO) van Rijn IJssel vinden. Kijk voor meer informatie op <a href="http://www.rijnijssel.nl/N@tschool/" target="_blank">N@tschool</a>.</p>
+		</div>
+			<h3>Q: Waar kan ik mijn afmeldformulier vinden?</h3>
+		<div>
+				<p>A: Die kunt u hier downloaden:<a href="Afmeldformulier%20Rijnijssel.pdf" target="_blank">AfmeldformulierPDF</a> </p>
+		</div>
+				<h3>Q: Hoe kan ik me aanmelden?</h3>
+		<div>
+				<p>A: Je kunt je alleen via de website aanmelden. Dit is het eenvoudigste door bij de beschrijving van de opleiding op de aanmeldknop te klikken; een deel van de informatie is dan al voor je ingevuld.</p>
+		</div>
+				<h3>Q: Wat kost de opleiding?</h3>
+		<div>
+				<p>A: -Voor een BOL-opleiding heeft de minister van OCW het lesgeld (als je op 1 augustus 2016 18 jaar of ouder bent) wettelijk vastgesteld op 1137,00 euro. Dit geldt voor schooljaar 2016-2017.<br>-Voor de BBL-opleidingen op niveau 1 en 2 is het cursusgeld wettelijk vastgesteld op 236,00 euro per cursusjaar. Voor BBL-opleidingen op niveau 3 en 4 is het vastgesteld op 573,00 euro. Ook deze bedragen gelden voor 2016-2017. </p>
+		</div>
+				<h3>Q: Wat zijn de toelatingseisen?</h3>
+		<div>
+				<p>A: -Met een vmbo-diploma (basisberoepsgerichte leerweg) ben je toelaatbaar tot een opleiding op niveau 2.<br>
+				-Een vmbo-diploma in de overige leerwegen (kaderberoepsgericht, gemengd en theoretisch) geeft toegang tot de opleidingen op niveau 3 en 4.<br>
+				-Met een overgangsbewijs van de havo 3/4 kun je een niveau 4-opleiding starten.<br>
+				-Met een havo-diploma op zak kun je diverse mbo-trajecten volgen in een verkorte leerroute.<br>
+				-Heb je geen diploma? Dan kun je prima terecht bij de Entree-opleidingen waar we diverse mogelijkheden aanbieden om je voor te bereiden op de arbeidsmarkt of een beroepsopleiding.<br>
+				Verder heeft een aantal opleidingen specifieke eisen die bij de opleiding vermeld staan. Daarbij gaat het bijvoorbeeld om een auditie of een sporttest.</p>
+		</div>
+				<h3>Q: Kan ik een keer een les meelopen?</h3>
+		<div>
+				<p>A: Als je op een van de scholen voor voortgezet onderwijs zit die zijn aangesloten bij de Lerende Regio Arnhem en die deelnemen aan het oriëntatieprogramma in de derde en vierde klas, kun je bij voorkeur daar aan mee doen. Zit je op een school die niet is aangesloten, dan kun je je vanaf september 2015 aanmelden om een dagdeel mee te lopen via een formulier op de website. De opleiding neemt dan contact met jou op.</p>
+		</div>
+				<h3>Q: Wanneer zijn de open dagen en avonden?</h3>
+		<div>
+				<p>A: Het overzicht met informatiemomenten vind je <a href="http://jongeren.rijnijssel.nl/roc/opleidingen/open%20dagen%20%252F%20infoavonden/" target="_blank">hier</a>.</p>
+		</div>
+		</div>
+
+	
+	</body>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+		
+		$(document).ready(function() {	//Dit betekent dat alles wat onder deze lijn staat kan functioneren
+			$('#main-content-faq h3').each(function() {	//Dit betekent dat de div main-content-faq h3 word geselecteerd, en dat de volgende regels daar in toepassing komen
+				var tis = $(this), state = false, answer = tis.next('div').slideUp();	//Dit betekent dat de div omhoog schuift
+				tis.click(function() {	//Dit betekent als je klikt dat de ''function'' gaat functioneren
+				state = !state;	//Dit betekent dat de status van alles op is geroepen
+				answer.slideToggle(state);	//Dit betekent dat het antwoord gaat sliden (omhoog en omlaag) zodra je er op klikt met de functie erboven beschreven
+				tis.toggleClass('active',state); //Dat betekent dat de class active word gemaakt en dat meerdere klassen worden toegevoegd van elk element
+				});
+			});
+		});
+			
+		</script>
+
+</html>
